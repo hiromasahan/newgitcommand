@@ -1,16 +1,10 @@
 if (Meteor.isClient) {
 
 
-   Session.set("title","Element of Style");
-   Session.set("author","Strunk & White");
-
-
-  Template.book.title = function () {
-   return Session.get("title");
+   Session.set("list",["one", "two"]);
+   
+  Template.list.items = function () {
+   return Session.get("list");
   };
-
-  Template.book.author = function () {
-   return Session.get("author");
-  }
 }
 
