@@ -4,15 +4,30 @@
 
 <body>
   <h1>People List</h1>
-  {{> person}}
+  {{> staff}}
 </body>
 
-<template name="person">
-  <h2>{{ fullname }}</h2>
-  <p>{{jobs}}</p>
+<template name="staff">
+  
+  <p>{{people.lenth}} Members</p>
   <ul>
-  	{{#each likes}}
-  	<li>{{this}}</li>
+  	{{#each people}}
+  	  {{>person}}
   	{{/each}}
   </ul>
+</template>
+
+
+<template name="peerson">
+<li>
+	<h2>{{ fullname }}</h2>
+	<p>
+		{{#if executive}}
+		  <strong>{{job}}</strong>>
+		  {{else}}
+		    {{job}}
+		   {{/if}}
+
+	</p>
+</li>
 </template>
