@@ -9,7 +9,7 @@ if (Meteor.isClient) {
   ];
 
 
-  Template.person.executive = fuction () {
+  Template.person.executive = function () {
      return !!this.job.match(/^C.*O$/);
 
   };
