@@ -1,13 +1,18 @@
 <head>
-  <title>Lesson01</title>
+  <title>People List</title>
 </head>
 
 <body>
-  {{> hello}}
+  <h1>People List</h1>
+  {{> person}}
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="person">
+  <h2>{{ fullname }}</h2>
+  <p>{{jobs}}</p>
+  <ul>
+  	{{#each likes}}
+  	<li>{{this}}</li>
+  	{{/each}}
+  </ul>
 </template>
