@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
   Template.hello.greeting = function () {
-    return "Welcome to gitcommand.";
+    return "Welcome to Lesson02.";
   };
 
   Template.hello.events({
