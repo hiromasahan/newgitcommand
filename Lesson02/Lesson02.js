@@ -22,7 +22,7 @@ if (Meteor.isClient) {
        }
 
      }
-
+  
   });
 }
 
