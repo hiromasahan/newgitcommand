@@ -6,10 +6,9 @@
   Template.personForm.events({
     'click button': function (e, t) {
       var el = t.find("#name");
-      People.insert({name :el.value});
+      People.insert({name: el.value});
       el.value = "";
     }
   });
 }
-
 
