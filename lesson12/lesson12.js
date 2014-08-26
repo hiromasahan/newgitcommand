@@ -9,7 +9,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer){
   Meteor.methods({
     createItem: function (text){
-      Items.insert({ text: text});
+      Items.insert({ text: text}, owner: this.userId);//this.setUserId("sring");
     }
   });
 }
