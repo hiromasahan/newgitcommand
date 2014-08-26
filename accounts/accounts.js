@@ -1,19 +1,14 @@
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to accounts.";
+  Template.login.createAccount = function () {
+    return Session.get("creatingAccount");
   };
 
-  Template.hello.events({
-    'click input': function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
+  Template.login.events({
+    'click #loginform':function(){
+      Session.set('creatingAccount',false);
+    },
+    'click #accountform':function(){
+      Session.set('creatingAccount',true);
     }
-  });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
   });
 }
