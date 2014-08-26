@@ -9,6 +9,23 @@ if (Meteor.isClient) {
     },
     'click #accountform':function(){
       Session.set('creatingAccount',true);
+    }，
+    'click #createaccount': function(e, t){
+      Session.set('creatingAccount',false);
+      Accounts.createUser({
+        username: t.find("#username").value,
+        password: t.find("#password").value,
+        email:    t.find("#email").value,
+        profile:{
+          name: t.find("#name").value
+        }
+      });
+    },
+    'click #logout':function(){
+      Meteor.logout();
+    },
+    'click #login': function(e, t){
+      Meteor.loginWithPassword(t.find("#username").value, t.find("#password").value);
     }
   });
 }
