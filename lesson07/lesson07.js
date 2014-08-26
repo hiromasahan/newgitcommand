@@ -29,10 +29,13 @@
         Session.set("edit-" + t.data._id, true);
     },
     'keypress input':function (e, t) {
-      if (e, keyCode === 13){
+      if (e,keyCode === 13){
         People.update(t.data, {  $set: { name: e.currentTarget.value}});
         Session.set("edit-" + t.data._id, false);
       }
+    },
+    'click .del':function(e, t){
+      People.remove(t.data);
     }
   });
 }
