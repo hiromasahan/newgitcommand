@@ -1,4 +1,4 @@
-var Items = Meteor.Collection("items");
+var Items = new Meteor.Collection("items");
 
 Items.allow({
   insert: function (userid, doc){
