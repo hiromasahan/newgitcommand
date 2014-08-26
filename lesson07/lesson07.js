@@ -12,5 +12,15 @@
       el.value = "";
     }
   });
+
+  Template.person.editing = function (){
+    return Session.get("edit-" + this._id);
+  };
+
+  Template.person.events({
+    'click':function (e, t){
+        Session.set("edit-" + t.data._id, true);
+    }
+  });
 }
 
