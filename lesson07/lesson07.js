@@ -1,3 +1,5 @@
+ var People = new Meteor.Collection("people");
+
  if (Meteor.isClient) {
   Template.personList.people = function () {
     return People.find();
