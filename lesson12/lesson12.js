@@ -6,10 +6,14 @@ if (Meteor.isClient) {
   };
 }
 
-if (Meteor.isServer){
-  Meteor.methods({
-    createItem: function (text){
-      Items.insert({ text: text}, owner: this.userId);//this.setUserId("sring");
+Meteor.methods({
+   createItem: function (text){
+    if (this.isSimulation){
+      console.log("sending",text, "to the server");
+    } else {
+      return Items.insert({ text: text});
     }
+
+  }
   });
-}
+
