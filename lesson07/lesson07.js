@@ -17,6 +17,13 @@
     return Session.get("edit-" + this._id);
   };
 
+  Template.person.rendered = function () {
+    var input = this.find("input");
+    if (input) {
+      input.focus();
+    }
+  };
+
   Template.person.events({
     'click':function (e, t){
         Session.set("edit-" + t.data._id, true);
