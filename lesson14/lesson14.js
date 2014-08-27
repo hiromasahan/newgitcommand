@@ -20,8 +20,10 @@ if (Meteor.isServer) {
         to: to,
         //cc, bcc, replyTo
         subject: subject,
-        text: text
+        htm;: text
       });
     }
   });
 }
+//mail format is 
+//MAIL_URL="smtp://USERNAME:PASSWORD@HOST:PORT" meteor
