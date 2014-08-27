@@ -3,13 +3,14 @@
 </head>
 
 <body>
-  {{>list}}
+  {{>tweetList}}
  </body>
 
- <template name="list">
+ <template name="tweetList">
+  <h1>Latest Refresh:{{latestRefresh}}</h1>
   <ul>
-  	{{#each items}}
-  	  <li> {{text}}</li>
+  	{{#each tweets}}
+  	  <li> <strong>{{user}}</strong>:{{text}}</li>
   	{{/each}}
   </ul>
   </template>
