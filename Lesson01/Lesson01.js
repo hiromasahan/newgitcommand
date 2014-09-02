@@ -17,6 +17,6 @@ console.log("hello world")
   };
 }
   if (Meteor.isServer) {
-console.log("hello world")
+console.log("hello Server")
 }
   
